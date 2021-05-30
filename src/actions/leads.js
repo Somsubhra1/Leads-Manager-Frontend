@@ -1,6 +1,6 @@
 import axios from "../axios";
 
-import { DELETE_LEAD, GET_LEADS } from "./types";
+import { DELETE_LEAD, GET_LEADS, ADD_LEAD } from "./types";
 
 // GET LEADS
 
@@ -21,5 +21,16 @@ export const deleteLead = (id) => (dispatch) => {
     .then((res) => {
       dispatch({ type: DELETE_LEAD, payload: id });
     })
-    .catch((err) => console.log(err)); 
+    .catch((err) => console.log(err));
+};
+
+// ADD LEAD
+
+export const addLead = (lead) => (dispatch) => {
+  axios
+    .post(`/api/leads/`, lead)
+    .then((res) => {
+      dispatch({ type: ADD_LEAD, payload: res.data });
+    })
+    .catch((err) => console.log(err));
 };
