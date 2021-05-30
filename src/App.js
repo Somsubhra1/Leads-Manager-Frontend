@@ -1,11 +1,8 @@
-import "./App.css";
+// import "./App.css";
+import Header from "./layout/Header";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Works</h1>
-    </div>
-  );
+  return <Header />;
 }
 
 export default App;
