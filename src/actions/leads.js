@@ -1,6 +1,6 @@
 import axios from "../axios";
 
-import { DELETE_LEAD, GET_LEADS, ADD_LEAD } from "./types";
+import { DELETE_LEAD, GET_LEADS, ADD_LEAD, GET_ERRORS } from "./types";
 
 // GET LEADS
 
@@ -32,5 +32,12 @@ export const addLead = (lead) => (dispatch) => {
     .then((res) => {
       dispatch({ type: ADD_LEAD, payload: res.data });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      const errors = {
+        msg: err.response.data,
+        status: err.response.status,
+      };
+
+      dispatch({ type: GET_ERRORS, payload: errors });
+    });
 };
