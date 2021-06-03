@@ -10,6 +10,7 @@ import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import React, { Component } from "react";
 import Alerts from "./layout/Alerts";
+import PrivateRoute from "./components/common/PrivateRoute";
 
 import {
   BrowserRouter as Router,
@@ -34,7 +35,7 @@ export class App extends Component {
               <Alerts />
               <div className="container">
                 <Switch>
-                  <Route exact path="/" component={Dashboard} />
+                  <PrivateRoute exact path="/" component={Dashboard} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                 </Switch>
