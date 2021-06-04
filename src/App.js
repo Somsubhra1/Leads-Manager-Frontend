@@ -12,6 +12,8 @@ import React, { Component } from "react";
 import Alerts from "./layout/Alerts";
 import PrivateRoute from "./components/common/PrivateRoute";
 
+import { loadUser } from "./actions/auth";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -25,6 +27,10 @@ const alertOptions = {
 };
 
 export class App extends Component {
+  componentDidMount() {
+    store.dispatch(loadUser());
+  }
+
   render() {
     return (
       <Provider store={store}>
