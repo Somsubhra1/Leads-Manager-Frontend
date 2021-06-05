@@ -16,7 +16,7 @@ const initialState = {
   user: null,
 };
 
-export default function (state = initialState, action) {
+const auth = (state = initialState, action) => {
   switch (action.type) {
     case USER_LOADING:
       return { ...state, isLoading: true };
@@ -57,4 +57,6 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default auth;

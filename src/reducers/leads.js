@@ -4,7 +4,7 @@ const initialState = {
   leads: [],
 };
 
-export default function (state = initialState, action) {
+const leads = (state = initialState, action) => {
   switch (action.type) {
     case GET_LEADS:
       return {
@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
     case DELETE_LEAD:
       return {
         ...state,
-        leads: state.leads.filter((lead) => lead.id != action.payload),
+        leads: state.leads.filter((lead) => lead.id !== action.payload),
       };
 
     case ADD_LEAD:
@@ -27,4 +27,6 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default leads;

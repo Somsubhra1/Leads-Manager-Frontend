@@ -8,7 +8,7 @@ const initialState = {};
 const middleware = [thunk];
 
 const enhancer =
-  process.env.NODE_ENV == "production"
+  process.env.NODE_ENV === "production"
     ? applyMiddleware(...middleware)
     : composeWithDevTools(applyMiddleware(...middleware));
 

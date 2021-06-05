@@ -2,7 +2,7 @@ import axios from "../axios";
 import { tokenConfig } from "./auth";
 import { createMessage, returnErrors } from "./messages";
 
-import { DELETE_LEAD, GET_LEADS, ADD_LEAD, GET_ERRORS } from "./types";
+import { DELETE_LEAD, GET_LEADS, ADD_LEAD } from "./types";
 
 // GET LEADS
 

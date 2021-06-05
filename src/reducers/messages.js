@@ -2,7 +2,7 @@ import { CREATE_MESSAGE } from "../actions/types";
 
 const initialState = {};
 
-export default function (state = initialState, action) {
+const messages = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_MESSAGE:
       return (state = action.payload);
@@ -10,4 +10,6 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default messages;

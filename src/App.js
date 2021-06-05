@@ -14,12 +14,7 @@ import PrivateRoute from "./components/common/PrivateRoute";
 
 import { loadUser } from "./actions/auth";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const alertOptions = {
   timeout: 3000,
